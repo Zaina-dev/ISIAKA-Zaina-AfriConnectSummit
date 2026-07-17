@@ -20,9 +20,309 @@
 </head>
 <body>
     
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">AfriConnect Summit 2026</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="programme.html">Programme</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="intervenants.html">Intervenants</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
-    
+       
+      <button class="theme-toggle" id="themeToggle" aria-label="Basculer le mode sombre/clair">
+                        <i class="bi bi-moon-fill"></i>
+                    </button>
+                </li>
+            </ul>
+
+            <button class="hamburger" aria-label="Menu de navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ============================================
+    HERO INTERNE
+    ============================================ -->
+    <section class="inner-hero">
+        <h1>Inscription &amp; <span class="highlight">Contact</span></h1>
+        <p class="breadcrumb">
+            <a href="index.html">Accueil</a> &gt; Inscription
+        </p>
+    </section>
+
+    <!-- ============================================
+    FORMULAIRE D'INSCRIPTION
+    ============================================ -->
+    <div class="contact-wrapper">
+        <!-- Formulaire -->
+        <div class="contact-form">
+            <h2 style="font-family: var(--font-heading); margin-bottom: var(--spacing-md);">
+                Rejoignez l'aventure <span class="highlight">AfriConnect</span>
+            </h2>
+
+            <form id="contactForm" novalidate>
+                <!-- Nom complet -->
+                <div class="form-group">
+                    <label for="fullName">Nom complet *</label>
+                    <input type="text" id="fullName" name="fullName" required placeholder="Votre nom et prénom" />
+                    <span class="error-message"></span>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="exemple@email.com" />
+                    <span class="error-message"></span>
+                </div>
+
+                <!-- Téléphone -->
+                <div class="form-group">
+                    <label for="phone">Téléphone *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="77 123 45 67" />
+                    <span class="error-message"></span>
+                </div>
+
+                <!-- Type de participation -->
+                <div class="form-group">
+                    <label for="participation">Type de participation *</label>
+                    <select id="participation" name="participation" required>
+                        <option value="">Sélectionnez une option</option>
+                        <option value="presentiel">Présentiel</option>
+                        <option value="en-ligne">En ligne</option>
+                        <option value="exposant">Exposant</option>
+                        <option value="media">Média / Presse</option>
+                    </select>
+                    <span class="error-message"></span>
+                </div>
+
+                <!-- Pays africain -->
+                <div class="form-group">
+                    <label for="country">Pays *</label>
+                    <select id="country" name="country" required>
+                        <option value="">Sélectionnez votre pays</option>
+                        <option value="senegal">Sénégal</option>
+                        <option value="ghana">Ghana</option>
+                        <option value="nigeria">Nigeria</option>
+                        <option value="cote-ivoire">Côte d'Ivoire</option>
+                        <option value="maroc">Maroc</option>
+                        <option value="tunisie">Tunisie</option>
+                        <option value="kenya">Kenya</option>
+                        <option value="afrique-sud">Afrique du Sud</option>
+                        <option value="egypte">Égypte</option>
+                        <option value="mali">Mali</option>
+                        <option value="burkina">Burkina Faso</option>
+                        <option value="benin">Bénin</option>
+                        <option value="togo">Togo</option>
+                        <option value="cameroun">Cameroun</option>
+                        <option value="rdc">République Démocratique du Congo</option>
+                    </select>
+                    <span class="error-message"></span>
+                </div>
+
+                <!-- Message -->
+                <div class="form-group">
+                    <label for="message">Message / Motivation *</label>
+                    <textarea id="message" name="message" required placeholder="Dites-nous pourquoi vous souhaitez participer à l'AfriConnect Summit 2026 (minimum 20 caractères)"></textarea>
+                    <span class="error-message"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    <i class="bi bi-send"></i> Envoyer ma candidature
+                </button>
+
+                <div id="formSuccess" class="form-success"></div>
+            </form>
+        </div>
+
+        <!-- Informations -->
+        <div class="contact-info">
+            <h3 style="font-family: var(--font-heading); margin-bottom: var(--spacing-sm);">
+                <i class="bi bi-info-circle"></i> Infos pratiques
+            </h3>
+
+            <div style="margin-bottom: var(--spacing-md);">
+                <p><strong><i class="bi bi-calendar-event"></i> Dates</strong></p>
+                <p>15 - 17 Décembre 2026</p>
+            </div>
+
+            <div style="margin-bottom: var(--spacing-md);">
+                <p><strong><i class="bi bi-geo-alt"></i> Lieu</strong></p>
+                <p>Centre de Conférences International,<br />Dakar, Sénégal</p>
+            </div>
+
+            <div style="margin-bottom: var(--spacing-md);">
+                <p><strong><i class="bi bi-clock"></i> Horaires</strong></p>
+                <p>9h00 - 18h30 chaque jour</p>
+            </div>
+
+            <div>
+                <p><strong><i class="bi bi-envelope"></i> Contact</strong></p>
+                <p><a href="mailto:contact@africonnect.com" style="color: var(--color-primary);">contact@africonnect.com</a></p>
+                <p><i class="bi bi-phone"></i> +221 77 123 45 67</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+    FAQ - ACCORDÉON CSS PUR
+    ============================================ -->
+    <section class="section">
+        <h2 class="section-title fade-in">Foire aux <span class="highlight">questions</span></h2>
+        <p class="section-subtitle fade-in">Tout ce que vous devez savoir avant de vous inscrire</p>
+
+        <div class="faq-container">
+            <!-- Question 1 -->
+            <div class="faq-item fade-in">
+                <input type="checkbox" id="faq1" />
+                <label for="faq1" class="faq-question">
+                    <span>Quels sont les tarifs de la conférence ?</span>
+                    <span class="icon"><i class="bi bi-plus-circle"></i></span>
+                </label>
+                <div class="faq-answer">
+                    <p>Les tarifs débutent à 150€ pour les étudiants et 350€ pour les professionnels. Des packs groupe et Early Bird sont disponibles jusqu'au 30 novembre 2026.</p>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="faq-item fade-in">
+                <input type="checkbox" id="faq2" />
+                <label for="faq2" class="faq-question">
+                    <span>Comment puis-je me rendre sur place ?</span>
+                    <span class="icon"><i class="bi bi-plus-circle"></i></span>
+                </label>
+                <div class="faq-answer">
+                    <p>Le Centre de Conférences International est accessible en transport en commun, taxi ou voiture. Un parking gratuit est disponible sur place.</p>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="faq-item fade-in">
+                <input type="checkbox" id="faq3" />
+                <label for="faq3" class="faq-question">
+                    <span>La conférence est-elle en français ou en anglais ?</span>
+                    <span class="icon"><i class="bi bi-plus-circle"></i></span>
+                </label>
+                <div class="faq-answer">
+                    <p>Les sessions sont principalement en français et en anglais, avec une traduction simultanée disponible pour les keynotes principales.</p>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="faq-item fade-in">
+                <input type="checkbox" id="faq4" />
+                <label for="faq4" class="faq-question">
+                    <span>Y aura-t-il des ateliers pratiques ?</span>
+                    <span class="icon"><i class="bi bi-plus-circle"></i></span>
+                </label>
+                <div class="faq-answer">
+                    <p>Oui ! De nombreux ateliers pratiques sont prévus chaque jour. Pensez à apporter votre ordinateur portable pour participer activement.</p>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="faq-item fade-in">
+                <input type="checkbox" id="faq5" />
+                <label for="faq5" class="faq-question">
+                    <span>Comment puis-je devenir sponsor ou exposant ?</span>
+                    <span class="icon"><i class="bi bi-plus-circle"></i></span>
+                </label>
+                <div class="faq-answer">
+                    <p>Contactez-nous directement à l'adresse <a href="mailto:partenariats@africonnect.com" style="color: var(--color-primary);">partenariats@africonnect.com</a> pour discuter des opportunités de sponsoring et d'exposition.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    CARTE GOOGLE MAPS
+    ============================================ -->
+    <div class="map-container">
+        <h2 style="font-family: var(--font-heading); text-align: center; margin-bottom: var(--spacing-sm);">
+            <span class="highlight">Où</span> nous trouver
+        </h2>
+        <p style="text-align: center; color: var(--text-secondary); margin-bottom: var(--spacing-md);">
+            Centre de Conférences International, Dakar, Sénégal
+        </p>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30889.72897976423!2d-17.4708756!3d14.716677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec1727c0523cdf7%3A0xa7741e4848eb7004!2sDakar%2C%20S%C3%A9n%C3%A9gal!5e0!3m2!1sfr!2sfr!4v1699999999999!5m2!1sfr!2sfr"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Carte de localisation du Centre de Conférences International de Dakar"
+        ></iframe>
+    </div>
+
+    <!-- ============================================
+    FOOTER
+    ============================================ -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4><i class="bi bi-satellite"></i> AfriConnect Summit</h4>
+                <p>La conférence tech qui connecte l'Afrique.</p>
+                <p><i class="bi bi-geo-alt"></i> Dakar, Sénégal</p>
+                <p><i class="bi bi-calendar3"></i> 15-17 Décembre 2026</p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Liens rapides</h4>
+                <p><a href="index.html">Accueil</a></p>
+                <p><a href="programme.html">Programme</a></p>
+                <p><a href="intervenants.html">Intervenants</a></p>
+                <p><a href="contact.html">Inscription</a></p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Suivez-nous</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                </div>
+                <p style="margin-top: var(--spacing-sm);">
+                    <i class="bi bi-envelope"></i> contact@africonnect.com
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span class="current-year">2026</span> AfriConnect Summit. Tous droits réservés.</p>
+            <p>Made with <i class="bi bi-heart-fill" style="color: #EF4444;"></i> in Africa</p>
+        </div>
+    </footer>
+
+    <!-- Bouton Retour en Haut -->
+    <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+        <i class="bi bi-chevron-up"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+
 </body>
 </html>
