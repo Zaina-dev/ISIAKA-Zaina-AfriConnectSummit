@@ -1,0 +1,74 @@
+/* ============================================
+   VARIABLES CSS
+   Commit 3 
+   ============================================ */
+:root {
+    /* Couleurs principales */
+    --color-primary: #6C3CE1;
+    --color-primary-light: #8B5CF6;
+    --color-secondary: #00D4FF;
+    --color-accent: #F59E0B;
+    --color-dark: #0A0A0F;
+    --color-dark-surface: #14141C;
+    --color-dark-card: #1E1E2A;
+    --color-light: #F8F9FA;
+    --color-light-surface: #FFFFFF;
+    --color-light-card: #F1F3F5;
+    --color-text-dark: #FFFFFF;
+    --color-text-light: #1A1A2E;
+    --color-gray-400: #9CA3AF;
+    --color-gray-600: #4B5563;
+    
+    /* Typographie */
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Espacements */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+    --spacing-xxl: 8rem;
+    
+    /* Border radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-full: 9999px;
+    
+    /* Ombres */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.2);
+    --shadow-glow: 0 0 30px rgba(108, 60, 225, 0.3);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.4s ease;
+    --transition-slow: 0.6s ease;
+    
+    /* Couleurs par défaut (light mode) */
+    --bg-body: var(--color-light);
+    --bg-surface: var(--color-light-surface);
+    --bg-card: var(--color-light-card);
+    --text-primary: var(--color-text-light);
+    --text-secondary: var(--color-gray-600);
+    --border-color: rgba(0, 0, 0, 0.1);
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --nav-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================
+   DARK MODE
+   ============================================ */
+[data-theme="dark"] {
+    --bg-body: var(--color-dark);
+    --bg-surface: var(--color-dark-surface);
+    --bg-card: var(--color-dark-card);
+    --text-primary: var(--color-text-dark);
+    --text-secondary: var(--color-gray-400);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --nav-bg: rgba(10, 10, 15, 0.95);
+    --nav-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
