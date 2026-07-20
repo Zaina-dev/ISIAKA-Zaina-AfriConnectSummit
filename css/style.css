@@ -1230,3 +1230,180 @@ footer {
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         flex-direction: column;
+
+         /*==========================================
+          Suite du CSS - Responsive et autres pages 
+          Commit 6
+         ================================================*/
+
+        padding: var(--spacing-md);
+        gap: var(--spacing-sm);
+        transform: translateX(100%);
+        transition: transform var(--transition-medium);
+    }
+
+    .nav-links.open {
+        transform: translateX(0);
+    }
+
+    /* Stats Grid - 2 colonnes sur tablette */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Speakers Grid - 2 colonnes */
+    .speakers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Themes Grid - 1 colonne */
+    .themes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact - 1 colonne */
+    .contact-wrapper {
+        flex-direction: column;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Hero buttons */
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE (375px)
+   ============================================ */
+@media (max-width: 375px) {
+    .logo {
+        font-size: 1rem;
+    }
+
+    .logo i {
+        font-size: 1.4rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .countdown-item {
+        min-width: 60px;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .countdown-item .number {
+        font-size: 1.5rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .speakers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit-item {
+        min-width: 100%;
+    }
+
+    .sponsor-gold {
+        font-size: 1.5rem;
+        padding: var(--spacing-md);
+        min-width: 100%;
+    }
+
+    .sponsor-silver {
+        font-size: 1.2rem;
+        padding: var(--spacing-sm);
+        min-width: 100%;
+    }
+
+    .sponsor-bronze {
+        font-size: 1rem;
+        padding: var(--spacing-sm);
+        min-width: 100%;
+    }
+
+    .section {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    .inner-hero {
+        padding: 100px var(--spacing-sm) var(--spacing-md);
+    }
+
+    .tabs {
+        gap: 0.5rem;
+    }
+
+    .tab-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .schedule-table {
+        font-size: 0.8rem;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+        padding: 0.5rem;
+    }
+
+    .filter-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - DESKTOP (1200px+)
+   ============================================ */
+@media (min-width: 1200px) {
+    .hero {
+        padding: 120px var(--spacing-xl) var(--spacing-xxl);
+    }
+
+    .section {
+        padding: var(--spacing-xxl) var(--spacing-xl);
+    }
+
+    .speakers-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    .stats-grid {
+        gap: var(--spacing-lg);
+    }
+
+    .benefit-item {
+        padding: var(--spacing-lg);
+    }
+}
