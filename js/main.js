@@ -189,3 +189,181 @@ if (statsSection) {
     statsObserver.observe(statsSection);
 }
 
+  
+     // ============================================
+// 6. BOUTON RETOUR EN HAUT
+// ============================================
+const backToTop = document.getElementById('backToTop');
+
+if (backToTop) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    });
+
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// ============================================
+// 7. ANNÉE DYNAMIQUE DANS LE FOOTER
+// ============================================
+const yearElements = document.querySelectorAll('.current-year');
+const currentYear = new Date().getFullYear();
+yearElements.forEach(el => {
+    el.textContent = currentYear;
+});
+
+// ============================================
+// 8. ONGLETS DU PROGRAMME (Page programme.html)
+// ============================================
+function initTabs() {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    if (tabBtns.length === 0) return;
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Retirer la classe active de tous les boutons
+            tabBtns.forEach(b => b.classList.remove('active'));
+            // Ajouter la classe active au bouton cliqué
+            btn.classList.add('active');
+
+            // Cacher tous les contenus
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // Afficher le contenu correspondant
+            const target = btn.getAttribute('data-tab');
+            const targetContent = document.getElementById(target);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+        });
+    });
+}
+
+initTabs();
+
+// ============================================
+// 9. FILTRAGE DES INTERVENANTS (Page intervenants.html)
+// ============================================
+function initFilters() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const speakerCards = document.querySelectorAll('.speaker-card');
+
+    if (filterBtns.length === 0) return;
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Retirer la classe active de tous les boutons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Ajouter la classe active au bouton cliqué
+            btn.classList.add('active');
+
+            const filter = btn.getAttribute('data-filter');
+
+            speakerCards.forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+}
+
+initFilters();
+
+// ============================================
+// 10. VALIDATION DE FORMULAIRE (Page contact.html)
+// ============================================
+function initFormValidation() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    const successMessage = document.getElementById('formSuccess');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        let isValid = true;
+
+        // Récupérer tous les champs requis
+        const requiredFields = form.querySelectorAll('[required]');
+        
+        requiredFields.forEach(field => {
+            const formGroup = field.closest('.form-group');
+            const errorMsg = formGroup.querySelector('.error-message');
+            
+            // Réinitialiser l'état
+            formGroup.classList.remove('error', 'success');
+            errorMsg.style.display = 'none';
+
+            // Valider le champ
+            let fieldValid = true;
+            let errorText = '';
+
+            if (field.type === 'email') {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(field.value)) {
+                    fieldValid = false;
+                    errorText = 'Veuillez entrer une adresse email valide.';
+                }
+            } else if (field.type === 'tel') {
+                const phoneRegex = /^[0-9]{8,}$/;
+                if (!phoneRegex.test(field.value.replace(/\s/g, ''))) {
+                    fieldValid = false;
+                    errorText = 'Le numéro de téléphone doit contenir au moins 8 chiffres.';
+                }
+            } else if (field.tagName === 'TEXTAREA') {
+                if (field.value.trim().length < 20) {
+                    fieldValid = false;
+                    errorText = 'Le message doit contenir au moins 20 caractères.';
+                }
+            } else if (field.value.trim() === '') {
+                fieldValid = false;
+                errorText = 'Ce champ est requis.';
+            }
+
+            if (!fieldValid) {
+                formGroup.classList.add('error');
+                errorMsg.textContent = errorText;
+                errorMsg.style.display = 'block';
+                isValid = false;
+            } else {
+                formGroup.classList.add('success');
+            }
+        });
+
+        if (isValid) {
+            // Afficher le message de succès
+            successMessage.classList.add('show');
+            successMessage.textContent = '✅ Votre inscription a été envoyée avec succès !';
+            
+            // Réinitialiser le formulaire
+            form.reset();
+            
+            // Retirer les classes de validation
+            document.querySelectorAll('.form-group').forEach(group => {
+                group.classList.remove('success', 'error');
+            });
+
+            // Cacher le message après 5 secondes
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+        }
+    });
+}
+
+initFormValidation();
+

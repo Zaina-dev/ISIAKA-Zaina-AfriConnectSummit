@@ -127,6 +127,8 @@ ul {
     border-radius: var(--radius-full);
 }
 
+}
+
 ::-webkit-scrollbar-thumb:hover {
     background: var(--color-primary-light);
 } 
@@ -275,10 +277,6 @@ nav {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-  */ ============================================ 
-      HERO SECTION 
-      Commit 5 
-   ============================================ */
 .hero {
     min-height: 100vh;
     display: flex;
