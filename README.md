@@ -5,7 +5,7 @@ Site vitrine de la conférence tech panafricaine
 Auteur	[ISIAKA_ZAINA_RACHEL]
 Classe	[L1 R.T]
 Année académique	2025-2026
-Date de rendu	[23/07/2026]
+Date de rendu	[24/07/2026]
 Type	Projet d'examen - Développement Web
 🎯 Description du Projet
 AfriConnect Summit 2026 est un site vitrine complet pour une conférence tech panafricaine fictive. L'événement annuel réunit développeurs, entrepreneurs et investisseurs de tout le continent pour partager, innover et construire l'avenir numérique de l'Afrique.
